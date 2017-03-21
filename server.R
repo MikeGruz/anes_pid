@@ -82,7 +82,8 @@ shinyServer(function(input, output) {
 				coord_flip() + ylim(c(0,1.05)) + ylab('') + xlab('') + 
 				theme(legend.position='none', text=element_text(size=20),
 					  panel.border=element_rect('#666666', fill=NA)) +
-				annotate("text", x=locs$x, y=locs$y, label=locs$label))
+				annotate("text", x=locs$x, y=locs$y, label=locs$label) +
+				theme_minimal())
 
 	})
 
@@ -117,7 +118,8 @@ shinyServer(function(input, output) {
 				coord_flip() + ylim(c(0,1.05)) + ylab('') + xlab('') + 
 				theme(legend.position='none', text=element_text(size=20),
 					  panel.border=element_rect('#666666', fill=NA)) +
-				annotate("text", x=locs$x, y=locs$y, label=locs$label))
+				annotate("text", x=locs$x, y=locs$y, label=locs$label) +
+				theme_minimal())
 
 	})
 
