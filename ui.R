@@ -6,9 +6,6 @@ shinyUI(
 
   pageWithSidebar(
     
-
-    
-    
 	headerPanel("Predictors of Political Behavior
 				in the 2012 U.S. Election"),
 
@@ -27,50 +24,32 @@ shinyUI(
 		conditionalPanel(
 			condition = "input.tabs1=='Vote Choice'",
 				h5("Partisanship and Demographics"),
-				HTML("<br>"),
 
 				# put party id in the model
 				checkboxInput("pidSelect", "Include Party ID in Model",
 							  FALSE),
-				HTML("<br>"),
 
 				# party id radios
-				#gsub("label class=\"radio\"",
-	   		#    	 "label class=\"radio inline\"",
-					 radioButtons("pid", label="Party ID",
+  			radioButtons("pid", label="Party ID",
 						 choices = c("Republican",
 									 "Democrat",
 									 "Independent"),
 						 selected = "Independent")),
 
-		HTML("<br>"),
-
+		# sex radio buttons
 		radioButtons("sex", "Sex:",
 					 choices = c("Male", "Female"),
 					 selected = "Male"),
 
-		# sex radios
-		#gsub("label class=\"radio\"",
-		#	 "label class=\"radio inline\"",
-		#	 radioButtons("sex", "Sex:",
-		#				  choices=c("Male","Female"))),
-
-		HTML("<br>"),
-
 		# race/ethnicity radios
-		#gsub("label class=\"radio\"",
-		#	 "label class=\"radio inline\"",
-			 radioButtons("race", "Race/Ethnicity:",
+		radioButtons("race", "Race/Ethnicity:",
 					choices = c("White","African American","Hispanic"),
 					selected = "White"),
 
-		HTML("<br>"),
 
 		# age slider
 		sliderInput("age", "Age:",
 					min=1, max=13, step=1, value=1),
-
-		HTML("<br>"),
 
 		# education radios
 		radioButtons("educ", "Education:",
@@ -80,8 +59,6 @@ shinyUI(
 								"College Grad",
 								"Post-Grad"),
 					 selected="No High School"),
-
-		HTML("<br>"),
 
 		# income slider
 		sliderInput("income", "Income:",
